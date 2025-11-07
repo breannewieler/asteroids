@@ -1,6 +1,5 @@
 import pygame
-import player
-import circleshape
+from player import Player
 from constants import *
 from logger import log_state
 
@@ -19,19 +18,13 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 clock = pygame.time.Clock()
 dt = 0
 
-# game loop
-running = True
-
-# fill screen black
-screen.fill("black")
-
 # create player
 x = SCREEN_WIDTH / 2
 y = SCREEN_HEIGHT / 2
-player = player.Player(x, y)
+ship = Player(x, y)
 
-# refresh screen
-pygame.display.flip()
+# game loop
+running = True
 
 while running:
     log_state()
@@ -41,7 +34,14 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    player.draw(screen)
+    # fill screen black
+    screen.fill("black")
+
+    # draw player
+    ship.draw(screen)
+
+    # refresh screen
+    pygame.display.flip()
 
     # defines the amount of time since last called
     # how often the loop runs; dt to seconds
