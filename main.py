@@ -37,6 +37,9 @@ while running:
     # fill screen black
     screen.fill("black")
 
+    # update position
+    ship.update(dt)
+    
     # draw player
     ship.draw(screen)
 
