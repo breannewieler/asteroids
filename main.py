@@ -68,7 +68,7 @@ while running:
             if shot.collides_with(asteroid):
                 log_event("asteroid_shot")
                 shot.kill()
-                asteroid.kill()
+                asteroid.split()
 
     
     # draw player
