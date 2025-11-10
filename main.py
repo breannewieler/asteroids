@@ -2,8 +2,8 @@ import sys
 import pygame
 from player import Player
 from asteroid import Asteroid
-from shot import Shot
 from asteroidfield import AsteroidField
+from shot import Shot
 from constants import *
 from logger import log_state, log_event
 

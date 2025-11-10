@@ -44,4 +44,3 @@ class Player(circleshape.CircleShape):
     def shoot(self):
         pew = shot.Shot(self.position.x, self.position.y)
         pew.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
-        
